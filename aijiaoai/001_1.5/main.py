@@ -17,6 +17,9 @@ regr = linear_model.LinearRegression()
 x, y = data[:, 0].reshape(-1, 1), data[:, 1]
 regr.fit(x, y)
 
+# 打印拟合参数
+print("coef_: %f, intercept_: %f" % (regr.coef_, regr.intercept_))
+
 # TODO 3. 画出身高与体重之间的关系
 plt.scatter(x, y, color='black')
 
