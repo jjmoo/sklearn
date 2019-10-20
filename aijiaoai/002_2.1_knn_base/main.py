@@ -1,3 +1,6 @@
+#! /usr/bin/env python3
+# -*- coding: utf-8 -*-
+
 from sklearn import datasets
 from collections import Counter  # 为了做投票
 from sklearn.model_selection import train_test_split
@@ -16,8 +19,7 @@ def euc_dis(instance1, instance2):
     instance1: 第一个样本， array型
     instance2: 第二个样本， array型
     """
-    # dist = np.sqrt(np.sum(np.square(np.array(instance1) - np.array(instance2))))
-    dist = np.sqrt(sum((instance1 - instance2) ** 2))
+    dist = np.sqrt(np.sum(np.square(np.array(instance1) - np.array(instance2))))
     return dist
 
 
@@ -29,20 +31,17 @@ def knn_classify(X, y, testInstance, k):
     testInstance: 测试数据，这里假定一个测试数据 array型
     k: 选择多少个neighbors?
     """
-    # distances = []
-    # for i in range(0, len(y)):
-    #     distances.append((euc_dis(X[i], testInstance), y[i]))
-    # distances.sort(key=lambda x: x[0])
-    # counter = Counter()
-    # for top in distances[0:k]:
-    #     counter[top[1]] += 1
-    distances = [euc_dis(x, testInstance) for x in X]
-    k_neighbors = np.argsort(distances)[:k]
-    counter = Counter(y[k_neighbors])
+    distances = []
+    for i in range(0, len(y)):
+        distances.append((euc_dis(X[i], testInstance), y[i]))
+    distances.sort(key=lambda x: x[0])
+    counter = Counter()
+    for top in distances[0:k]:
+        counter[top[1]] += 1
     return counter.most_common()[0][0]
 
 
 # 预测结果。
 predictions = [knn_classify(X_train, y_train, data, 3) for data in X_test]
-correct = np.count_nonzero(predictions == y_test)
+correct = np.count_nonzero(True == (predictions == y_test))
 print("Accuracy is: %.3f" % (correct / len(X_test)))

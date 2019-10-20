@@ -1,6 +1,7 @@
+.DS_Store
 *.iml
 .idea/misc.xml
 .idea/workspace.xml
 .idea/modules.xml
 .idea/vcs.xml
-
+cifar-10-batches-py

@@ -1,3 +1,6 @@
+#! /usr/bin/env python3
+# -*- coding: utf-8 -*-
+
 # 创建数据集，把数据写入到numpy数组
 import numpy as np  # 引用numpy库，主要用来做科学计算
 import matplotlib.pyplot as plt  # 引用matplotlib库，主要用来画图
