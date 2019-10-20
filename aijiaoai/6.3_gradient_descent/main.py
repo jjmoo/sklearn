@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*-
 
 # 导入库
+import time
 import numpy as np
 import matplotlib.pyplot as plt
 from sklearn.linear_model import LogisticRegression
@@ -35,6 +36,7 @@ def log_likelihood(px, py, pw, pb):
 def logistic_regression(px, py, num_steps, learning_rate):
     lw, lb = np.zeros(px.shape[1]), 0
     for step in range(num_steps):
+        start = time.time() * 1e6
         # 预测值与真实值之间的误差
         error = sigmoid(np.dot(px, lw) + lb) - y
         # 梯度计算
@@ -43,8 +45,9 @@ def logistic_regression(px, py, num_steps, learning_rate):
         # 梯度更新
         lw = lw - learning_rate * grad_w
         lb = lb - learning_rate * grad_b
+        end = time.time() * 1e6
         if step % 10000 == 0:
-            print(log_likelihood(px, y, lw, lb))
+            print(log_likelihood(px, y, lw, lb), end - start)
     return lw, lb
 
 
