@@ -1,23 +1,23 @@
-back
-buffer_overflow
-ftp_write
-guess_passwd
-imap,ipsweep
-land
-loadmodule
-multihop
-neptune
-nmap
-normal
-perl
-phf
-pod
-portsweep
-rootkit
-satan
-smurf
-spy
-teardrop
-warezclient
-warezmaster
-
+back.: dos
+buffer_overflow.: u2r
+ftp_write.: r2l
+guess_passwd.: r2l
+imap.: r2l
+ipsweep.: probing
+land.: dos
+loadmodule.: u2r
+multihop.: r2l
+neptune.: dos
+nmap.: probing
+normal.: normal
+perl.: u2r
+phf.: r2l
+pod.: dos
+portsweep.: probing
+rootkit.: u2r
+satan.: probing
+smurf.: dos
+spy.: r2l
+teardrop.: dos
+warezclient.: r2l
+warezmaster.: r2l
