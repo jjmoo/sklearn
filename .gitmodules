@@ -1,3 +1,6 @@
 [submodule "greedy"]
 	path = greedy
 	url = git@github.com:jjmoo/Machine-Learning.git
+[submodule "d2l-zh"]
+	path = d2l-zh
+	url = git@github.com:jjmoo/d2l-zh.git

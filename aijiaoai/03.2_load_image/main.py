@@ -4,7 +4,7 @@
 import os
 import matplotlib.pyplot as plt
 
-path = os.path.join(os.path.dirname(__file__), '../../data/sample_1.jpg')
+path = os.path.join(os.path.dirname(__file__), '../data/sample_1.jpg')
 img = plt.imread(path)
 print(img.shape)
 
